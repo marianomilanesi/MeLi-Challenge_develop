@@ -1,0 +1,11 @@
+row_id,user_id,user_state,user_manager
+1,a1,active,milton@example.com
+2,a2,active,milanesimariano@gmail.com
+3,a3,active,camila@example.com
+4,a4,active,samanta@example.com
+5,b1,active,ariel@example.com
+6,b2,active,tom@example.com
+7,b3,active,gabi@example.com
+8,c1,active,informes@example.com
+9,c2,active,seguridad@example.com
+10,c3,active,marketing@example.com
