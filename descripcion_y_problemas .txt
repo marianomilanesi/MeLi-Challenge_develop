@@ -1,0 +1,22 @@
+
+
+******************Descripcion del programa******************
+Se desarrollo un sistema el cual contiene un archivo json, este es utilizado para nombrar las bases de datos que existen, el mail del owner de dicha base y el riesgo con la que esta esta categorizada. Por otro lado se tiene una base "users.csv" que esta compuesta por un ID, un user ID, estado del usuario y el mail del mismo.
+La idea principal segun el requisito que se pidio, fue de armar un programa en lenguaje python en donde al hacer el merge entre el archivo json y el CSV, el programa detecte aquellas bases que tienen un riesgo "high" y este envie un mail al manager, solicitando una confirmacion para la categorizacion de la base de datos.
+
+******************Problemas que hubo al momento de desarrollar******************
+ - El primer problema que hubo es que al momento de hacer el merge entre bases  (json,csv) el json no tomaba los datos de usuarios segun su codigo de identificador.
+ Para solucionarlo se creo un nuevo codigo de identificacion en la base users y el json lo tomó.
+
+ - El segundo problema que hubo es que al momento de generar una casilla de correo para enviar el mail a los managers, el mail de google me bloqueaba o no se logueaba correctamente y terminaba en error de envio.
+Para solucionar este problema se probo con una casilla de outlook y se cambio el servidor SMTP de google por el de outlook365 y esto hizo que fuinsionase correctamente.
+
+ - El tercer problema que hubo fue que la base de datos en la que se almacenaban los datos finales no se estaba generando correctamente, tirando errores en los registros, en un principio se intento guardar en un mysql, pero no encontre la solucion por lo que se cambio de base de datos.
+La solucion que se encontro buscando en internet es el siguiente fragmento de codigo pero con sqlite3. Entonces lo que hice fue cambiar de mysql a sqlite3 y me funciono.
+
+cursor.execute('''
+        INSERT INTO database_info (database_name, owner_email, manager_email, classification)
+        VALUES (?, ?, ?, ?)
+        ''', (db['database_name'], owner_email, manager_email, db['classification']))
+
+Utilizando esta base sqlite3, se corrigio el error y en caso de no exisitir la base, esta se crea (fragmento de codigo anterior) y se carga el registro y si ya existe simplemente se va cargando debajo del registro ya existente el nuevo dato.
