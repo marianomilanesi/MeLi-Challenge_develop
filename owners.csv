@@ -1,0 +1,17 @@
+user_id,user_state,user_owner
+1,a2,active,lucas@owner.com
+2,b2,active,juan@owner.com
+3c2,active,camilia@owner.com
+4,a3,active,lucia@owner.com
+5,b3,active,marcos@owner.com
+6,c3,active,milagros@owner.com
+7,a4,active,robert@owner.com
+8,b4,active,aquiles@owner.com
+9,c4,active,ana@owner.com
+10,a3,active,patricio@owner.com
+11,b3,active,simon@owner.com
+12,c3,active,facundo@owner.com
+13,a4,active,selena@owner.com
+14,b4,active,hans@owner.com
+15,c4,active,carlos@owner.com
+16,a5,active,luciana@owner.com
