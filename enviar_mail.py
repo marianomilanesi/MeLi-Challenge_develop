@@ -5,8 +5,8 @@ from email.mime.multipart import MIMEMultipart
 
 SMTP_SERVER = 'smtp.office365.com'
 SMTP_PORT = 587
-SMTP_USER = 'intru505@hotmail.com'
-SMTP_PASSWORD = 'Primavera96!'
+SMTP_USER = 'tu_correo' # Ingresar un correo valido Outlook
+SMTP_PASSWORD = 'tu_contraseña' # ingresar la contraseña
 
 def send_email(to_email, subject, body):
     msg = MIMEMultipart()
