@@ -20,3 +20,6 @@ cursor.execute('''
         ''', (db['database_name'], owner_email, manager_email, db['classification']))
 
 Utilizando esta base sqlite3, se corrigio el error y en caso de no exisitir la base, esta se crea (fragmento de codigo anterior) y se carga el registro y si ya existe simplemente se va cargando debajo del registro ya existente el nuevo dato.
+
+
+Dentro de los problemas que se tuvo y no se pudo arreglar es que se intento mejorar el codigo agregadon 2 bases de datos, una "owners" y la otra "managers". El codigo modificado se encuentra en el branch "idea_correcciones", pero quedo en esa rama debido a que no pude encontrar el error, el cual es que no cruza datos de las bases CSV para enviar los mails al manager correspondiente segun el owner.
